@@ -1,5 +1,3 @@
 MachineLearning.iml
 .idea/workspace.xml
-target/classes/clustering/KMeansClustering.class
-target/classes/clustering/RetailVO.class
-target/test-classes/big_data_analytics_java/AppTest.class
+target/**
