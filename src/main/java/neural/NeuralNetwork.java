@@ -103,13 +103,16 @@ public class NeuralNetwork
                 .build();
 
         //create the neural network object
+        System.out.println("Creating the neural network...");
         MultiLayerNetwork network = new MultiLayerNetwork(configuration);
         network.init();
-
+        
         //train
+        System.out.println("Traning the neural network...");
         network.fit(dataSetIterator);
 
         //evaluate
+        System.out.println("Evaluating the neural network...");
         Evaluation evaluation = network.evaluate(new CifarDataSetIterator(2, 500, false));
         System.out.println(evaluation.stats());
     }
