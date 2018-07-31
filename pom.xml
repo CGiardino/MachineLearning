@@ -14,7 +14,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-
+    <graphframe.path>graphframe_lib/graphframes-0.5.0-spark2.1-s_2.11.jar</graphframe.path>
+    <logging.sl4j.path>graphframe_lib/scala-logging-slf4j_2.11-2.1.2.jar</logging.sl4j.path>
+    <logging.api>graphframe_lib/scala-logging-api_2.11-2.1.2.jar</logging.api>
+    <confluent.version>3.0.0</confluent.version>
+    <spark.version>1.6.2</spark.version>
+    <avro.version>1.7.7</avro.version>
   </properties>
 
   <dependencies>
@@ -42,7 +47,8 @@
       <artifactId>graphframes</artifactId>
       <version>0.5.0-spark2.1-s_2.11</version>
       <scope>system</scope>
-      <systemPath>${graphframe.path}</systemPath>
+      <systemPath>${basedir}/${graphframe.path}</systemPath>
+
     </dependency>
 
     <dependency>
@@ -50,7 +56,7 @@
       <artifactId>scala-logging-slf4j</artifactId>
       <version>2.11-2.1.2.jar</version>
       <scope>system</scope>
-      <systemPath>${logging.sl4j.path}</systemPath>
+      <systemPath>${basedir}/${logging.sl4j.path}</systemPath>
     </dependency>
 
     <dependency>
@@ -58,7 +64,37 @@
       <artifactId>scala-logging-api</artifactId>
       <version>2.11-2.1.2</version>
       <scope>system</scope>
-      <systemPath>${logging.api}</systemPath>
+      <systemPath>${basedir}/${logging.api}</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka_2.10</artifactId>
+      <version>0.8.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.confluent</groupId>
+      <artifactId>kafka-avro-serializer</artifactId>
+      <version>${confluent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>${avro.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-streaming_2.10</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-streaming-kafka_2.10</artifactId>
+      <version>${spark.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.deeplearning4j</groupId>
+      <artifactId>deeplearning4j-core</artifactId>
+      <version>0.8.0</version>
     </dependency>
 
   </dependencies>
